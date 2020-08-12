@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Japplication</string>
+    <string name="go_to_activity_2">Go to activity 2</string>
+    <string name="JLPT_5">JLPT 5</string>
+    <string name="niveau_JLPT">Niveau JLPT</string>
+    <string name="JLPT_4">JLPT 4</string>
+    <string name="JLPT_3">JLPT 3</string>
+    <string name="JLPT_2">JLPT 2</string>
+    <string name="JLPT_1">JLPT 1</string>
+</resources>
