@@ -8,25 +8,11 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="130dp" />
-
-    <Button
-        android:id="@+id/learningMethodButton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:padding="20dp"
-        android:text="@string/learning_method"
-        android:background="#a1d5f7"
-        android:textSize="18sp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
+        android:layout_height="150dp" />
 
     <Button
         android:id="@+id/jlptButton"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:padding="20dp"
@@ -40,7 +26,7 @@
 
     <Button
         android:id="@+id/aboutButton"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:padding="20dp"
@@ -54,7 +40,7 @@
 
     <Button
         android:id="@+id/exitButton"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:padding="20dp"

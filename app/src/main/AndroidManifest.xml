@@ -16,7 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".jlpt.Jlpt5" />
+        <activity
+            android:name=".jlpt.Jlpt5"
+            />
+        <activity
+            android:name=".about.About"
+            />
     </application>
 
 </manifest>
