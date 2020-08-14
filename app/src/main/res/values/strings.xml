@@ -11,8 +11,10 @@
     <string name="learning_method">Méthode d\'apprentissage</string>
     <string name="about">A propos</string>
     <string name="exit">Quitter</string>
-    <string name="about_title">Quel est le but de la Japplication ?</string>
+    <string name="about_title">Quel est le but de Japplication ?</string>
     <string name="about_content">Je cherche de par mon expérience en japonais d\'offrir un apprentissage le plus clair et concis possible en supprimant l\'apprentissage inutile</string>
     <string name="about_who_title">Qui se cache derrière l\'application ?</string>
     <string name="about_who">A la base, juste un étudiant développeur et diplomé en japonais. Mais le code de l\'application étant totalement ouvert, toute participation est la bienvenue !</string>
+    <string name="kanji_title">漢字</string>
+    <string name="back">Retour</string>
 </resources>
