@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
-data class Jlpt5(
+@Entity(tableName = "jlpt5_table")
+class Jlpt5(
 
     @PrimaryKey(autoGenerate = true)
     val id: Int? = null,
