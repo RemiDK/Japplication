@@ -1,7 +1,7 @@
 package com.project.japplication.orm.dao
 
 import androidx.room.*
-import com.project.japplication.orm.Jlpt5
+import com.project.japplication.orm.entities.Jlpt5
 
 @Dao
 interface Jlpt5Dao {

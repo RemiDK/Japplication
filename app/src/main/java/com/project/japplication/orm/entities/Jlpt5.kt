@@ -1,4 +1,4 @@
-package com.project.japplication.orm
+package com.project.japplication.orm.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -9,6 +9,7 @@ class Jlpt5(
 
     @PrimaryKey(autoGenerate = true)
     val id: Int? = null,
+    @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "onyoumi") val onyoumi: String,
     @ColumnInfo(name = "kunyoumi") val kunyoumi: String
 )

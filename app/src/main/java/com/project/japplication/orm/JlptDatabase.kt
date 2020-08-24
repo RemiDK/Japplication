@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.project.japplication.orm.dao.Jlpt5Dao
+import com.project.japplication.orm.entities.Jlpt5
 
 @Database(entities = [Jlpt5::class], version = 1, exportSchema = false)
 public abstract class JlptDatabase : RoomDatabase() {
