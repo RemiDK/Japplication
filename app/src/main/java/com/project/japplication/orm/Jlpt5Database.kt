@@ -4,11 +4,14 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.project.japplication.orm.dao.Jlpt5Dao
 import com.project.japplication.orm.entities.Jlpt5
+import com.project.japplication.orm.utilities.ListConverter
 
 @Database(entities = [Jlpt5::class], version = 1, exportSchema = false)
-public abstract class JlptDatabase : RoomDatabase() {
+@TypeConverters(ListConverter::class)
+abstract class Jlpt5Database : RoomDatabase() {
 
     abstract fun jlpt5Dao(): Jlpt5Dao
 
@@ -17,15 +20,15 @@ public abstract class JlptDatabase : RoomDatabase() {
     companion object {
 
         @Volatile
-        private var INSTANCE: JlptDatabase? = null
+        private var INSTANCE: Jlpt5Database? = null
 
-        fun getKanjisDataBase(context: Context): JlptDatabase {
+        fun getKanjisDataBase(context: Context): Jlpt5Database {
             val tempInstance = INSTANCE
             if (tempInstance != null) {
                 return tempInstance
             }
             synchronized(this) {
-                val instance = Room.databaseBuilder(context.applicationContext, JlptDatabase::class.java, "jlpt5_table").allowMainThreadQueries().build()
+                val instance = Room.databaseBuilder(context.applicationContext, Jlpt5Database::class.java, "jlpt5_db").allowMainThreadQueries().build()
                 INSTANCE = instance
                 return instance
             }

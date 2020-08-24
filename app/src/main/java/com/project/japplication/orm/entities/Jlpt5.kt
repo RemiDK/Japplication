@@ -10,6 +10,6 @@ class Jlpt5(
     @PrimaryKey(autoGenerate = true)
     val id: Int? = null,
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "onyoumi") val onyoumi: String,
-    @ColumnInfo(name = "kunyoumi") val kunyoumi: String
+    @ColumnInfo(name = "onyoumi") val onyoumi: List<String>,
+    @ColumnInfo(name = "kunyoumi") val kunyoumi: List<String>
 )
