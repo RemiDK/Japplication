@@ -6,8 +6,8 @@ import android.util.Log
 import android.view.Menu
 import android.widget.Button
 import com.project.japplication.R
-import com.project.japplication.orm.entities.Jlpt5
 import com.project.japplication.orm.Jlpt5Database
+import com.project.japplication.prepopulateDbJlpt5
 
 class Jlpt5 : Activity() {
 
@@ -15,17 +15,12 @@ class Jlpt5 : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.levelsList)
+        setContentView(R.layout.levels_list)
         title = "JLPT"
 
         // TODO Change to coroutine
         db = Jlpt5Database.getKanjisDataBase(this)
-
-        var newKanji = Jlpt5(name = "山", onyoumi = listOf("san"), kunyoumi = listOf("yama"))
-        db?.jlpt5Dao()?.insertKanji(newKanji)
-
-        newKanji = Jlpt5(name = "一", onyoumi = listOf("ichi", "itsu"), kunyoumi = listOf("hito"))
-        db?.jlpt5Dao()?.insertKanji(newKanji)
+        prepopulateDbJlpt5(this)
 
         val res = db?.jlpt5Dao()?.getAll()
         var kanjis = ""
