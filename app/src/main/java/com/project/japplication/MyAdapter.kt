@@ -44,6 +44,7 @@ class MyAdapter(private val kanjisList: List<Jlpt5>) : RecyclerView.Adapter<MyAd
         fun bind(kanji: Jlpt5) {
             this.kanji = kanji
             view.jlpt5_name.text = kanji.name
+            view.jlpt5_description.text = kanji.description.toString()
         }
     }
 
