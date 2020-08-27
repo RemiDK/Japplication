@@ -13,6 +13,6 @@ fun prepopulateDbJlpt5(context: Context) {
     newKanji = Jlpt5(name = "一", onyoumi = listOf("ichi", "itsu"), kunyoumi = listOf("hito"), description = "Un")
     db.jlpt5Dao().insertKanji(newKanji)
 
-    newKanji = Jlpt5(name = "二", onyoumi = listOf("ni", "ji"), kunyoumi = listOf("futa", "futata"), description = "Deux")
+    newKanji = Jlpt5(name = "二", onyoumi = listOf("ni", "ji"), kunyoumi = listOf("futa", "futata"), description = "Deux, test, retest")
     db.jlpt5Dao().insertKanji(newKanji)
 }
