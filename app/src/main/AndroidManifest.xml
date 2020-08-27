@@ -17,11 +17,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".jlpt.Jlpt5"
+            android:name=".jlpt.LevelsList"
             android:theme="@style/Widget.AppCompat.Light.ActionBar"
             />
         <activity
             android:name=".about.About"
+            android:theme="@style/Widget.AppCompat.Light.ActionBar"
+            />
+        <activity
+            android:name=".jlpt.Jlpt5View"
             android:theme="@style/Widget.AppCompat.Light.ActionBar"
             />
     </application>

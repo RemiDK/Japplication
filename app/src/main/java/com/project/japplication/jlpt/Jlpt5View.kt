@@ -2,36 +2,38 @@ package com.project.japplication.jlpt
 
 import android.app.Activity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
-import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.project.japplication.MyAdapter
 import com.project.japplication.R
 import com.project.japplication.orm.Jlpt5Database
-import com.project.japplication.prepopulateDbJlpt5
+import com.project.japplication.orm.database.prepopulateDbJlpt5
 
-class Jlpt5 : Activity() {
+class Jlpt5View : Activity() {
 
     private var db: Jlpt5Database? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.levels_list)
-        title = "JLPT"
+        setContentView(R.layout.jlpt5)
+        title = "JLPT 5"
 
         // TODO Change to coroutine
         db = Jlpt5Database.getKanjisDataBase(this)
         prepopulateDbJlpt5(this)
 
         val res = db?.jlpt5Dao()?.getAll()
-        var kanjis = ""
-        res?.map {
-            kanjis += it.name +  " onyoumi : " + it.onyoumi + " kunyoumi : " + it.kunyoumi
+
+
+        if (res != null) {
+            val recyclerView: RecyclerView = findViewById(R.id.jlpt5_recycler_view)
+
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = MyAdapter(res)
+
         }
 
-        val buttonJlpt5 = findViewById<Button>(R.id.buttonJlpt5)
-        buttonJlpt5?.setOnClickListener {
-            Log.i("TAG", kanjis)
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

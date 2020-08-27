@@ -1,4 +1,4 @@
-package com.project.japplication
+package com.project.japplication.orm.database
 
 import android.content.Context
 import com.project.japplication.orm.Jlpt5Database

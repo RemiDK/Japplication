@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.project.japplication.about.About
-import com.project.japplication.jlpt.Jlpt5
+import com.project.japplication.jlpt.LevelsList
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         val jlptButton = findViewById<Button>(R.id.jlptButton)
         jlptButton?.setOnClickListener {
-            val intent = Intent(this, Jlpt5::class.java)
+            val intent = Intent(this, LevelsList::class.java)
             startActivity(intent)
         }
 
