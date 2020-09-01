@@ -1,10 +1,14 @@
 package com.project.japplication
 
+import android.app.Activity
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.project.japplication.jlpt.Jlpt5Details
 import com.project.japplication.orm.entities.Jlpt5
 import kotlinx.android.synthetic.main.jlpt5_cells.view.*
 
@@ -13,7 +17,7 @@ import kotlinx.android.synthetic.main.jlpt5_cells.view.*
 // And this tutorial https://www.raywenderlich.com/1560485-android-recyclerview-tutorial-with-kotlin
 
 
-class MyAdapter(private val kanjisList: List<Jlpt5>) : RecyclerView.Adapter<MyAdapter.Jlpt5Holder>() {
+class MyAdapter(private val kanjisList: List<Jlpt5>, val activity: Activity) : RecyclerView.Adapter<MyAdapter.Jlpt5Holder>() {
 
     override fun getItemCount() = kanjisList.size
 
@@ -21,7 +25,7 @@ class MyAdapter(private val kanjisList: List<Jlpt5>) : RecyclerView.Adapter<MyAd
         val textView = LayoutInflater.from(parent.context)
             .inflate(R.layout.jlpt5_cells, parent, false)
 
-        return Jlpt5Holder(textView)
+        return Jlpt5Holder(textView, activity)
     }
 
     override fun onBindViewHolder(holder: Jlpt5Holder, position: Int) {
@@ -29,22 +33,26 @@ class MyAdapter(private val kanjisList: List<Jlpt5>) : RecyclerView.Adapter<MyAd
         holder.bind(kanjis)
     }
 
-    class Jlpt5Holder(v: View) : RecyclerView.ViewHolder(v), View.OnClickListener {
+    class Jlpt5Holder(v: View, activity: Activity) : RecyclerView.ViewHolder(v), View.OnClickListener {
         private var view: View = v
         private var kanji: Jlpt5? = null
+        private var currentActivity: Activity = activity
+
 
         init {
             v.setOnClickListener(this)
         }
 
         override fun onClick(v: View) {
-            Log.i("TAG", "CLICKED")
+            val intent = Intent(currentActivity, Jlpt5Details::class.java)
+            intent.putExtra("kanji", this.kanji?.id)
+            currentActivity.startActivity(intent)
         }
 
         fun bind(kanji: Jlpt5) {
             this.kanji = kanji
             view.jlpt5_name.text = kanji.name
-            view.jlpt5_description.text = kanji.description.toString()
+            view.jlpt5_description.text = kanji.description
         }
     }
 

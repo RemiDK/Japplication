@@ -30,7 +30,7 @@ class Jlpt5View : Activity() {
             val recyclerView: RecyclerView = findViewById(R.id.jlpt5_recycler_view)
 
             recyclerView.layoutManager = LinearLayoutManager(this)
-            recyclerView.adapter = MyAdapter(res)
+            recyclerView.adapter = MyAdapter(res, this)
 
         }
 

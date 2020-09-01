@@ -28,6 +28,10 @@
             android:name=".jlpt.Jlpt5View"
             android:theme="@style/Widget.AppCompat.Light.ActionBar"
             />
+        <activity
+            android:name=".jlpt.Jlpt5Details"
+            android:theme="@style/Widget.AppCompat.Light.ActionBar"
+            />
     </application>
 
 </manifest>

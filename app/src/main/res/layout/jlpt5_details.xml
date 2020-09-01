@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f2f7ff"
+    android:padding="20dp"
+    >
+
+    <TextView
+        android:id="@+id/jlpt5_details_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="#212422"
+        android:textSize="15sp"
+        tools:text="Nom du kanji"
+        />
+
+    <TextView
+        android:id="@+id/jlpt5_details_kanji"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="40dp"
+        android:textColor="#212422"
+        android:textSize="50sp"
+        tools:text="字"
+        />
+
+    <TextView
+        android:id="@+id/jlpt5_details_onyoumi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="25dp"
+        android:textColor="#212422"
+        android:textSize="25sp"
+        tools:text="Onyoumi : lala, lala lala"
+        />
+
+    <TextView
+        android:id="@+id/jlpt5_details_kunyoumi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="15dp"
+        android:textColor="#212422"
+        android:textSize="25sp"
+        tools:text="Kunyoumi : lulu lulu lulu"
+        />
+
+</LinearLayout>

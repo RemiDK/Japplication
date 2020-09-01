@@ -10,7 +10,7 @@ interface Jlpt5Dao {
     fun getAll(): List<Jlpt5>
 
     @Query("SELECT * FROM jlpt5_table WHERE id = :jlpt5Id")
-    fun getById(jlpt5Id: Int): Jlpt5
+    fun getById(jlpt5Id: Int?): Jlpt5
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertKanji(jlpt5: Jlpt5)
