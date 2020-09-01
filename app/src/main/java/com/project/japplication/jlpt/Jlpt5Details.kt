@@ -22,7 +22,25 @@ class Jlpt5Details : Activity() {
         // Find it in db
         val kanji = Jlpt5Database.getKanjisDataBase(this).jlpt5Dao().getById(kanjiId)
 
-        val textView : TextView = findViewById(R.id.jlpt5_details_name)
-        textView.text = kanji.name
+
+        val kanjiNameView : TextView = findViewById(R.id.jlpt5_details_name)
+        kanjiNameView.text = kanji.name
+
+        val kanjiDescriptionView: TextView = findViewById(R.id.jlpt5_details_description)
+        kanjiDescriptionView.text = kanji.description
+
+        val kanjiOnyoumiView : TextView = findViewById(R.id.jlpt5_details_onyoumi)
+        val onyoumiToString = kanji.onyoumi.toString()
+            .replace("[", "")
+            .replace("]", "")
+        val onYoumiToDisplay = getString(R.string.jlpt5_onyoumi, onyoumiToString)
+        kanjiOnyoumiView.text = onYoumiToDisplay
+
+        val kanjiKunyoumi : TextView = findViewById(R.id.jlpt5_details_kunyoumi)
+        val kunyoumiToString = kanji.kunyoumi.toString()
+            .replace("[", "")
+            .replace("]", "")
+        val kunyoumiToDisplay = getString(R.string.jlpt5_kunyoumi, kunyoumiToString)
+        kanjiKunyoumi.text = kunyoumiToDisplay
     }
 }

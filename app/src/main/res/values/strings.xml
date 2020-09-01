@@ -17,4 +17,6 @@
     <string name="about_who">A la base, juste un étudiant développeur et diplomé en japonais. Mais le code de l\'application étant totalement ouvert, toute participation est la bienvenue !</string>
     <string name="kanji_title">漢字</string>
     <string name="back">Retour</string>
+    <string name="jlpt5_onyoumi">Onyoumi : %1$s</string>
+    <string name="jlpt5_kunyoumi">Kunyoumi : %1$s</string>
 </resources>

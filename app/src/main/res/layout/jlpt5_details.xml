@@ -9,7 +9,7 @@
     >
 
     <TextView
-        android:id="@+id/jlpt5_details_name"
+        android:id="@+id/jlpt5_details_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -17,12 +17,12 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
         android:textColor="#212422"
-        android:textSize="15sp"
+        android:textSize="25sp"
         tools:text="Nom du kanji"
         />
 
     <TextView
-        android:id="@+id/jlpt5_details_kanji"
+        android:id="@+id/jlpt5_details_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -41,7 +41,8 @@
         android:gravity="center"
         android:layout_marginBottom="25dp"
         android:textColor="#212422"
-        android:textSize="25sp"
+        android:textSize="17sp"
+        android:text="@string/jlpt5_onyoumi"
         tools:text="Onyoumi : lala, lala lala"
         />
 
@@ -53,7 +54,8 @@
         android:gravity="center"
         android:layout_marginBottom="15dp"
         android:textColor="#212422"
-        android:textSize="25sp"
+        android:textSize="17sp"
+        android:text="@string/jlpt5_kunyoumi"
         tools:text="Kunyoumi : lulu lulu lulu"
         />
 
