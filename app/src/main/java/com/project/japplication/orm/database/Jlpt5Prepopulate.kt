@@ -7,6 +7,8 @@ import com.project.japplication.orm.entities.Jlpt5
 fun prepopulateDbJlpt5(context: Context) {
 
     val db = Jlpt5Database.getKanjisDataBase(context)
+    db.jlpt5Dao().resetTable()
+
     var newKanji = Jlpt5(name = "山", onyoumi = listOf("san"), kunyoumi = listOf("yama"), description = "Montagne")
     db.jlpt5Dao().insertKanji(newKanji)
 
