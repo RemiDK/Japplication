@@ -6,10 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.project.japplication.orm.dao.Jlpt5Dao
-import com.project.japplication.orm.entities.Jlpt5
+import com.project.japplication.orm.entities.Kanji
+import com.project.japplication.orm.entities.Kunyoumi
+import com.project.japplication.orm.entities.Onyoumi
 import com.project.japplication.orm.utilities.ListConverter
 
-@Database(entities = [Jlpt5::class], version = 1, exportSchema = false)
+@Database(entities = [Kanji::class, Onyoumi::class, Kunyoumi::class], version = 1, exportSchema = false)
 @TypeConverters(ListConverter::class)
 abstract class Jlpt5Database : RoomDatabase() {
 

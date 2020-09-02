@@ -23,7 +23,7 @@ class Jlpt5View : Activity() {
         db = Jlpt5Database.getKanjisDataBase(this)
         prepopulateDbJlpt5(this)
 
-        val res = db?.jlpt5Dao()?.getAll()
+        val res = db?.jlpt5Dao()?.getKanjisWithPronunciations()
 
 
         if (res != null) {

@@ -2,14 +2,12 @@ package com.project.japplication
 
 import android.app.Activity
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.project.japplication.jlpt.Jlpt5Details
-import com.project.japplication.orm.entities.Jlpt5
+import com.project.japplication.orm.entities.KanjiWithPronunciation
 import kotlinx.android.synthetic.main.jlpt5_cells.view.*
 
 // I used doc https://developer.android.com/guide/topics/ui/layout/recyclerview
@@ -17,7 +15,7 @@ import kotlinx.android.synthetic.main.jlpt5_cells.view.*
 // And this tutorial https://www.raywenderlich.com/1560485-android-recyclerview-tutorial-with-kotlin
 
 
-class MyAdapter(private val kanjisList: List<Jlpt5>, val activity: Activity) : RecyclerView.Adapter<MyAdapter.Jlpt5Holder>() {
+class MyAdapter(private val kanjisList: List<KanjiWithPronunciation>, val activity: Activity) : RecyclerView.Adapter<MyAdapter.Jlpt5Holder>() {
 
     override fun getItemCount() = kanjisList.size
 
@@ -35,7 +33,7 @@ class MyAdapter(private val kanjisList: List<Jlpt5>, val activity: Activity) : R
 
     class Jlpt5Holder(v: View, activity: Activity) : RecyclerView.ViewHolder(v), View.OnClickListener {
         private var view: View = v
-        private var kanji: Jlpt5? = null
+        private var kanji: KanjiWithPronunciation? = null
         private var currentActivity: Activity = activity
 
 
@@ -45,14 +43,14 @@ class MyAdapter(private val kanjisList: List<Jlpt5>, val activity: Activity) : R
 
         override fun onClick(v: View) {
             val intent = Intent(currentActivity, Jlpt5Details::class.java)
-            intent.putExtra("kanji", this.kanji?.id)
+            intent.putExtra("kanji", this.kanji?.kanji?.kanji_id)
             currentActivity.startActivity(intent)
         }
 
-        fun bind(kanji: Jlpt5) {
+        fun bind(kanji: KanjiWithPronunciation) {
             this.kanji = kanji
-            view.jlpt5_name.text = kanji.name
-            view.jlpt5_description.text = kanji.description
+            view.jlpt5_name.text = kanji.kanji.name
+            view.jlpt5_description.text = kanji.kanji.description
         }
     }
 

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import com.project.japplication.R
 import com.project.japplication.orm.Jlpt5Database
+import com.project.japplication.orm.entities.Kunyoumi
 
 class Jlpt5Details : Activity() {
 
@@ -17,29 +18,35 @@ class Jlpt5Details : Activity() {
         // Get kanji by using his ID
         val intent: Intent = intent
         val bundle: Bundle? = intent.extras
-        val kanjiId = bundle?.getInt("kanji")
+        val kanjiId = bundle?.getLong("kanji")
 
         // Find it in db
-        val kanji = Jlpt5Database.getKanjisDataBase(this).jlpt5Dao().getById(kanjiId)
-
+        val kanjiWithPronunciation = Jlpt5Database.getKanjisDataBase(this).jlpt5Dao().getKanjisWithPronunciationsById(kanjiId)
 
         val kanjiNameView : TextView = findViewById(R.id.jlpt5_details_name)
-        kanjiNameView.text = kanji.name
+        kanjiNameView.text = kanjiWithPronunciation.kanji.name
 
         val kanjiDescriptionView: TextView = findViewById(R.id.jlpt5_details_description)
-        kanjiDescriptionView.text = kanji.description
+        kanjiDescriptionView.text = kanjiWithPronunciation.kanji.description
 
         val kanjiOnyoumiView : TextView = findViewById(R.id.jlpt5_details_onyoumi)
-        val onyoumiToString = kanji.onyoumi.toString()
-            .replace("[", "")
-            .replace("]", "")
+        var onyoumiToString = ""
+        for (onyoumi in kanjiWithPronunciation.onyoumi) {
+            for(item in onyoumi.pronunciation) {
+                onyoumiToString += "$item "
+            }
+        }
         val onYoumiToDisplay = getString(R.string.jlpt5_onyoumi, onyoumiToString)
         kanjiOnyoumiView.text = onYoumiToDisplay
 
         val kanjiKunyoumi : TextView = findViewById(R.id.jlpt5_details_kunyoumi)
-        val kunyoumiToString = kanji.kunyoumi.toString()
-            .replace("[", "")
-            .replace("]", "")
+        var kunyoumiToString = ""
+        for (kunyoumi in kanjiWithPronunciation.kunyoumi) {
+            for (item in kunyoumi.pronunciation) {
+                kunyoumiToString += "$item "
+            }
+        }
+
         val kunyoumiToDisplay = getString(R.string.jlpt5_kunyoumi, kunyoumiToString)
         kanjiKunyoumi.text = kunyoumiToDisplay
     }
