@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.project.japplication.jlpt.Jlpt5Details
 import com.project.japplication.orm.entities.KanjiWithPronunciation
-import kotlinx.android.synthetic.main.jlpt5_cells.view.*
+import kotlinx.android.synthetic.main.jlpt5_kanjis_cells.view.*
 
 // I used doc https://developer.android.com/guide/topics/ui/layout/recyclerview
 // For function onCreateViewHolder, don't add "as TextView" like it's written in the doc or you'll have a class exception
@@ -21,7 +21,7 @@ class MyAdapter(private val kanjisList: List<KanjiWithPronunciation>, val activi
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Jlpt5Holder {
         val textView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.jlpt5_cells, parent, false)
+            .inflate(R.layout.jlpt5_kanjis_cells, parent, false)
 
         return Jlpt5Holder(textView, activity)
     }

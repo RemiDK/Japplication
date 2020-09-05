@@ -29,6 +29,8 @@ class Jlpt5Details : Activity() {
         val kanjiDescriptionView: TextView = findViewById(R.id.jlpt5_details_description)
         kanjiDescriptionView.text = kanjiWithPronunciation.kanji.description
 
+        // Onyoumi
+        // Change Onyoumi's list into string
         val kanjiOnyoumiView : TextView = findViewById(R.id.jlpt5_details_onyoumi)
         var onyoumiToString = ""
         for (onyoumi in kanjiWithPronunciation.onyoumi) {
@@ -39,6 +41,26 @@ class Jlpt5Details : Activity() {
         val onYoumiToDisplay = getString(R.string.jlpt5_onyoumi, onyoumiToString)
         kanjiOnyoumiView.text = onYoumiToDisplay
 
+        // Create a string with examples and translations
+        val kanjiOnyoumiExample : TextView = findViewById(R.id.jlpt5_details_onyoumi_example)
+        var onyoumiExampleToString = ""
+        for (onyoumi in kanjiWithPronunciation.onyoumi) {
+            var i = 0
+            while (i < onyoumi.example.size) {
+                onyoumiExampleToString += onyoumi.example[i] + " = "
+                onyoumiExampleToString += onyoumi.translation[i]
+                if (i < onyoumi.example.size - 1) {
+                    onyoumiExampleToString += "\n"
+                }
+
+                i++
+            }
+        }
+        kanjiOnyoumiExample.text = onyoumiExampleToString
+
+
+        // Kunyoumi
+        // Change kunyoumi's list into string
         val kanjiKunyoumi : TextView = findViewById(R.id.jlpt5_details_kunyoumi)
         var kunyoumiToString = ""
         for (kunyoumi in kanjiWithPronunciation.kunyoumi) {
@@ -46,8 +68,24 @@ class Jlpt5Details : Activity() {
                 kunyoumiToString += "$item "
             }
         }
-
         val kunyoumiToDisplay = getString(R.string.jlpt5_kunyoumi, kunyoumiToString)
         kanjiKunyoumi.text = kunyoumiToDisplay
+
+        // Create a string with examples and translations
+        val kanjiKunyoumiExample : TextView = findViewById(R.id.jlpt5_details_kunyoumi_example)
+        var kunyoumiExampleToString = ""
+        for (kunyoumi in kanjiWithPronunciation.kunyoumi) {
+            var i = 0
+            while (i < kunyoumi.example.size) {
+                kunyoumiExampleToString += kunyoumi.example[i] + " = "
+                kunyoumiExampleToString += kunyoumi.translation[i]
+                if (i < kunyoumi.example.size - 1) {
+                    kunyoumiExampleToString += "\n"
+                }
+
+                i++
+            }
+        }
+        kanjiKunyoumiExample.text = kunyoumiExampleToString
     }
 }

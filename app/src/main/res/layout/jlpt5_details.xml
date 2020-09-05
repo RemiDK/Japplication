@@ -8,55 +8,144 @@
     android:padding="20dp"
     >
 
-    <TextView
-        android:id="@+id/jlpt5_details_description"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:textColor="#212422"
-        android:textSize="25sp"
-        tools:text="Nom du kanji"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#a1d5f7"
+        >
 
-    <TextView
-        android:id="@+id/jlpt5_details_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginBottom="40dp"
-        android:textColor="#212422"
-        android:textSize="50sp"
-        tools:text="字"
-        />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/border"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="40dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            >
 
-    <TextView
-        android:id="@+id/jlpt5_details_onyoumi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginBottom="25dp"
-        android:textColor="#212422"
-        android:textSize="17sp"
-        android:text="@string/jlpt5_onyoumi"
-        tools:text="Onyoumi : lala, lala lala"
-        />
+            <TextView
+                android:id="@+id/jlpt5_details_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#212422"
+                android:textSize="25sp"
+                tools:text="Nom du kanji"
 
-    <TextView
-        android:id="@+id/jlpt5_details_kunyoumi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginBottom="15dp"
-        android:textColor="#212422"
-        android:textSize="17sp"
-        android:text="@string/jlpt5_kunyoumi"
-        tools:text="Kunyoumi : lulu lulu lulu"
-        />
+                />
+
+            <TextView
+                android:id="@+id/jlpt5_details_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#212422"
+                android:textSize="70sp"
+                tools:text="字"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#a1d5f7"
+            >
+
+            <TextView
+                android:id="@+id/jlpt5_details_onyoumi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginBottom="25dp"
+                android:textColor="#212422"
+                android:textSize="17sp"
+                android:text="@string/jlpt5_onyoumi"
+                tools:text="Onyoumi : lala, lala lala"
+                />
+
+            <TextView
+                android:id="@+id/jlpt5_details_onyoumi_example"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginBottom="15dp"
+                android:textColor="#212422"
+                android:textSize="17sp"
+                tools:text="Onyoumi example"
+                />
+
+            <TextView
+                android:id="@+id/jlpt5_details_onyoumi_translation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:textColor="#212422"
+                android:textSize="17sp"
+                tools:text="Onyoumi translation"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#a1d5f7"
+            >
+
+            <TextView
+                android:id="@+id/jlpt5_details_kunyoumi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginBottom="15dp"
+                android:textColor="#212422"
+                android:textSize="17sp"
+                android:text="@string/jlpt5_kunyoumi"
+                tools:text="Kunyoumi : lulu lulu lulu"
+                />
+
+            <TextView
+                android:id="@+id/jlpt5_details_kunyoumi_example"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginBottom="15dp"
+                android:textColor="#212422"
+                android:textSize="17sp"
+                tools:text="Kunyoumi example"
+                />
+
+            <TextView
+                android:id="@+id/jlpt5_details_kunyoumi_translation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginBottom="15dp"
+                android:textColor="#212422"
+                android:textSize="17sp"
+                tools:text="Kunyoumi translation"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
